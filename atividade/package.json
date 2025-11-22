@@ -4,7 +4,12 @@
   "description": "Projeto base para o trabalho de teste de desempenho.",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "test:smoke": "k6 run tests/smoke.js",
+    "test:load": "k6 run tests/load.js",
+    "test:stress": "k6 run tests/stress.js",
+    "test:spike": "k6 run tests/spike.js",
+    "test:all": "npm run test:smoke && npm run test:load && npm run test:stress && npm run test:spike"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
